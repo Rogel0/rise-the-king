@@ -1,5 +1,5 @@
 import React from "react";
-// import aboutUsImage from "../images/my-image.jpg";
+import aboutUsImage from "../images/my-image.jpg";
 
 function AboutUsModal({ showAboutUsModal, closeAboutUsModal }) {
   return (
@@ -20,7 +20,7 @@ function AboutUsModal({ showAboutUsModal, closeAboutUsModal }) {
             ></button>
           </div>
           <div className="modal-body">
-            {/* <img
+            <img
               src={aboutUsImage}
               alt="About Us"
               style={{
@@ -31,41 +31,43 @@ function AboutUsModal({ showAboutUsModal, closeAboutUsModal }) {
                 marginLeft: "auto",
                 marginRight: "auto",
               }}
-            /> */}
+            />
             <h5
-              style={{ color: "red", fontSize: "20px", marginBottom: "10px"  }}
+              style={{ color: "red", fontSize: "20px", marginBottom: "10px" }}
             >
               Game:
             </h5>
             <p
-              style={{ color: "yellow", fontSize: "16px", marginBottom: "20px" }}
+              style={{
+                color: "yellow",
+                fontSize: "16px",
+                marginBottom: "20px",
+              }}
             >
-              This game is a maze game developed as a part of a project.
+              This game is a maze game developed by Rogel Gerodiaz as a part of
+              a project.
             </p>
             <h5
               style={{ color: "red", fontSize: "20px", marginBottom: "10px" }}
             >
-              Developers:
+              Developer:
             </h5>
             <p
-              style={{ color: "yellow", fontSize: "16px", marginBottom: "20px" }}
+              style={{
+                color: "yellow",
+                fontSize: "16px",
+                marginBottom: "20px",
+              }}
             >
-              Rogel Gerodiaz - Lead Developer, UI/UX Developer, and Team Lead
-            </p>
-            <p
-              style={{ color: "yellow", fontSize: "16px", marginBottom: "20px" }}
-            >
-              Ace Lapan - Front End Developer
-            </p>
-            <p
-              style={{ color: "yellow", fontSize: "16px", marginBottom: "20px" }}
-            >
-              Marc Angelo Arnaldo - Front End Developer
-            </p>
-            <p
-              style={{ color: "yellow", fontSize: "16px", marginBottom: "20px" }}
-            >
-              John Gaylord Mantal - UI Analyst
+              <p
+                style={{
+                  color: "yellow",
+                  fontSize: "16px",
+                  marginBottom: "20px",
+                }}
+              >
+                Rogel Gerodiaz - Sole Developer, UI/UX Developer, Game Designer
+              </p>
             </p>
             <h5
               style={{ color: "red", fontSize: "20px", marginBottom: "10px" }}
@@ -73,13 +75,15 @@ function AboutUsModal({ showAboutUsModal, closeAboutUsModal }) {
               Responsibilities:
             </h5>
             <p
-              style={{ color: "yellow", fontSize: "16px", marginBottom: "20px" }}
+              style={{
+                color: "yellow",
+                fontSize: "16px",
+                marginBottom: "20px",
+              }}
             >
-                As the development team, they were responsible for all aspects of
-                the game, including design, development, and testing. Rogel
-                Gerodiaz was the lead developer, UI/UX developer, and team lead,
-                while Ace Lapan and Marc Angelo Arnaldo contributed as front-end developers.
-                John Gaylord Mantal played a crucial role as the UI analyst.
+              Rogel Gerodiaz was responsible for all aspects of the game,
+              including design, development, testing, deployment, and
+              maintenance.
             </p>
           </div>
         </div>
