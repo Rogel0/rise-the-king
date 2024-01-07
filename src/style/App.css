@@ -1,0 +1,285 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  background-image: url("../images/bgcastle.jpg");
+  background-size: cover;
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.row {
+  display: flex;
+}
+
+/* .cell {
+  border: 1px solid black;
+} */
+
+.empty {
+  background-color: rgb(194, 197, 194);
+}
+
+.cell.level0, .cell.level1 {
+  width: calc(100vh / 16);
+  height: calc(100vh / 16);
+  padding: 0;
+  margin: 0;
+}
+
+.cell.level2 {
+  width: calc(80vh / 23);
+  height: calc(28vh / 8); 
+}
+
+.box.level2 {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.wall.level2 {
+  background-repeat: no-repeat;
+  
+}
+
+/* .row.level2{
+  height: 80px;
+} */
+
+
+
+.wall {
+background-image: url('../images/wall.png');
+background-size: cover; /* Resize the background image to cover the entire container */
+background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+/* .level1.wall {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 40px;
+} */
+
+.box {
+  width: 100px;
+  height: 40px;
+  background-image: url('../images/box.png');
+  background-size: cover;
+  border: none;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+
+.level2.player, .level2.destination {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.level2.player::after, .level2.destination::after {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 220px;
+  margin-bottom: 25px;
+  position: fixed;
+  bottom: 90%;
+  left: 85%;
+  transform: translate(-50%, -50%); 
+}
+
+
+
+
+.destination {
+  background-image: url('../images/destination.png');
+  background-size: cover;
+  background-color: rgb(197, 194, 194);
+}
+.destination::after {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85%;
+  font-size: calc(100vh / 18);
+}
+
+.level2.destination::after {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  font-size: calc(80vh / 30);
+}
+
+.level2.player::after{
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  font-size: calc(80vh / 28);
+}
+
+
+.player {
+  background-image: url('../images/player.png');
+  background-size: cover;
+  background-color: rgb(197, 194, 194);
+  background-repeat: no-repeat;
+}
+.player::after {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85%;
+  font-size: calc(100vh / 18);
+}
+
+.box-on-destination {
+  width: 100px;
+  height: 40px;
+  background-image: url('../images/box.png');
+  background-size: cover; /* Resize the background image to cover the entire container */
+  border: none;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.board {
+  position: relative;
+  /* Other styles for the board... */
+}
+
+.next-level-button {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.level-name {
+  color: rgb(25, 24, 24);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.App.level3 .cell {
+  /* adjust the size of the cells for level 3 */
+  width: 100px;
+  height: 20px;
+}
+
+.App.level3 .row {
+  /* adjust the size of the rows for level 3 */
+  height: 2000px;
+
+}
+
+.finish-level {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 40px;
+  color: white;
+  font-size: 40px;
+  height: 60px;
+  background-color: green;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .player::after, .level2.player::after {
+    font-size: calc(60vh / 28);
+  }
+
+  .player {
+    /* background-size: contain; */
+  }
+  .cell.level0 {
+    width: calc(60vh / 12);
+    height: calc(60vh / 12);
+  }
+  .App.level0, .App.level1, .App.level2{
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  
+  .cell.level1 {
+    width: calc(55vh / 20);
+    height: calc(50vh / 16 );
+  }
+
+  .cell.level2 {
+    width: calc(80vh / 23);
+    height: calc(28vh / 22); 
+  }
+  
+  .box.level2 {
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .level1.box {
+    /* background-size: contain;
+    background-repeat: no-repeat; */
+  }
+  .level1.wall {
+    /* background-size: contain;
+    background-repeat: no-repeat; */
+  }
+  .grid-container {
+    
+  }
+  .level1.player {
+    /* background-size: contain; */
+  }
+  .level1.player::after, .level1.destination::after {
+    font-size: calc(60vh / 28);
+  }
+  .level1.destination {
+    /* background-size: contain; */
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 40px;
+    margin-bottom: 25px;
+    position: fixed;
+    bottom: 90%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+  }
+
+}
+

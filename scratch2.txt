@@ -1,0 +1,243 @@
+
+
+using namespace std;
+
+
+#define N 7
+#define UP 72
+#define DOWN 80
+#define LEFT 75
+#define RIGHT 77
+//#define SPACE 32
+
+
+
+int table[N][N];
+int x,y;
+int row,col;
+int xprev,yprev;
+int player;
+int counter;
+int input;
+
+/*
+int table[row][col] = {
+  {0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0}
+};
+*/
+
+
+
+
+void wall(int xin, int yin)
+{
+	setfillstyle(1,BROWN);
+	bar(xin * 50 + 51, yin * 50 + 51, xin * 50 + 100, yin * 50 + 100);
+	//bar(xin * 50 + 101, yin * 50 + 101, xin * 50 + 200, yin * 50 + 200);
+
+	table[yin][xin] = 1;
+}
+
+void end(int xin, int yin)
+{
+	setfillstyle(1,YELLOW);
+	bar(xin * 50 + 51, yin * 50 + 51, xin * 50 + 100, yin * 50 + 100);
+
+}
+
+
+void box(int xin, int yin)
+{
+	setfillstyle(1,RED);
+	bar(xin * 50 + 51, yin * 50 + 51, xin * 50 + 100, yin * 50 + 100);
+	table[yin][xin] = 2;
+}
+ 
+
+void level1() // template
+{
+	//starting location
+	row = 3;
+	col = 3;
+	
+	x = row * 50 + 50;
+	y = col * 50 + 50;
+	xprev = x;
+	yprev = y;
+	
+	outtextxy(195, 25, "LEVEL 1");
+		
+	
+	end(6,6); // end location
+	end(0,0);
+	end(6,0);
+	end(0,6);
+
+	box(4,4);
+	box(4,1);
+	box(2,3);
+	box(1,2);
+	
+	
+
+	wall(6,3);
+	wall(6,4);
+	wall(6,5);
+	
+	wall(5,0);
+	wall(4,0);
+	wall(3,0);
+	
+	
+	
+	wall(0,1);
+	wall(0,2);
+	wall(0,3);
+	wall(0,4);
+	wall(0,5);
+	
+	wall(3,6);
+	
+	
+	
+}
+
+void level2()
+{
+	row = 1;
+	col = 1;
+	
+	x = row * 50 + 50;
+	y = col * 50 + 50;
+	xprev = x;
+	yprev = y;
+	
+	outtextxy(195, 25, "LEVEL 2");
+	//box(2,3);
+	
+	
+	wall(0,0);
+	wall(0,1);
+	wall(0,2);
+	wall(0,5);
+	wall(0,6);
+	
+	wall(1,0);
+	wall(2,0);
+	wall(3,0);
+	wall(4,0);
+	wall(5,0);
+	wall(6,0);
+	
+
+	wall(3,2);
+	wall(4,2);
+	
+	wall(1,6);
+	wall(2,6);
+	wall(3,6);
+	wall(3,5);
+	wall(3,4);
+	
+	box(5,5);
+	box(4,3);
+	box(1,2);
+	box(5,2);
+	
+	end(1,5);
+	end(4,6);
+	end(2,5);
+	end(6,6);
+	
+	
+	
+	//end(3,3);
+}
+
+/*
+void level3()
+{
+	row = 6;
+	col = 6;
+	
+	x = row * 50 + 50;
+	y = col * 50 + 50;
+	xprev = x;
+	yprev = y;
+	
+	wall(0,0);
+	wall(1,0);
+	wall(2,0);
+	wall(3,0);
+	wall(4,0);
+	wall(5,0);
+	wall(6,0);
+}
+*/
+
+
+
+void redraw()
+{
+	//background
+	//users board
+	int i,j;
+	setcolor(WHITE);
+	setfillstyle(1,GREEN);
+	bar(50,50, 50+6*50+50,50+6*50+50);
+	
+	for(i=0;i<N;i++)
+	{
+		for(j=0; j<N; j++)
+		{
+			rectangle(50+i*50,50+j*50, 50+i*50+50,50+j*50+50);
+	
+
+		}
+	}
+}
+
+
+
+void clear()
+{
+	for(int i=0; i<N; i++)
+	{
+		for(int j=0; j<N; j++)
+		{
+			table[i][j]=0;
+		}
+	}
+	redraw();
+}
+
+void progView()
+{
+	system("cls");
+	for(int i=0; i<N-0; i++)
+	{	
+		for(int j=0; j<N; j++)
+		{
+			cout<<table[i][j];
+		}
+		cout<<endl;
+	}
+}
+
+
+
+void initG(){
+	int gd=DETECT, gm;
+	initgraph(&gd,&gm,"");
+	if(graphresult()!=grOk){
+		cout<<"Cannot draw";
+		getch();
+		exit(1);
+	}
+	//map1();
+	redraw();
+}

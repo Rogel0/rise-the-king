@@ -1,0 +1,178 @@
+.centered-modal .modal-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    perspective: 1000px;
+    background-image: url("../images/bgcastle.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .welcome-text {
+    font-size: 7em;
+    color: #11033a;
+    text-shadow: 40px 40px 60px rgba(0,0,0,10);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: all 0.5s ease;
+    -webkit-transform: perspective(1000px) rotateY(-5deg);
+    -moz-transform: perspective(1000px) rotateY(-5deg);
+    -ms-transform: perspective(1000px) rotateY(-5deg);
+    -o-transform: perspective(1000px) rotateY(-5deg);
+    cursor: pointer;
+    text-align: center;
+}
+
+
+  
+  .welcome-text:hover {
+    transform: perspective(900px) rotateY(5deg);
+    -webkit-transform: perspective(900px) rotateY(5deg);
+    -moz-transform: perspective(900px) rotateY(5deg);
+    -ms-transform: perspective(900px) rotateY(5deg);
+    -o-transform: perspective(900px) rotateY(5deg);
+}
+  
+  .btnStartGame, .btnInstructions {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    color: #fff;
+    background-color: #161515;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
+    transform: rotateX(20deg);
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .btnStartGame:hover, .btnInstructions:hover {
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+    transform: rotateX(0deg);
+    scale: 2.2;
+  }
+
+  .mute-button-game {
+    position: absolute;
+    top: 15px;
+    right: 120px;
+    size: 24;
+    height: 24;
+    width: 24;
+    /* background: transparent;
+    color: red; */
+  }
+
+  
+
+  .settings-button-game {
+    position: absolute;
+    top: 15px;
+    right: 85px;
+    /* background: transparent;
+    color: red; */
+  }
+
+  .home-button-game {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    /* background: transparent; */
+    /* color: red; */
+  }
+
+  .centered-modal .modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .object-image {
+    width: 30px;
+    height: 30px;
+  }
+
+  li {
+    display: flex;
+  }
+
+  .object-p {
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+
+  .modal-dialog-scrollable .customs-modal {
+    background-color: #141313 !important; /* Change this to your desired color */
+    color: white;
+  }
+  
+  .modal-content .btn-close {
+    color: white !important;
+    background-color: #f9f7f7;
+  }
+
+  .customize-icon {
+    background: none;
+    background-clip: border-box;
+    border: none;
+    color: brown;
+  }
+
+
+  @media screen and (max-width: 767px) {
+    .welcome-text {
+      font-size: 2.5em;
+    }
+    .mute-button {
+      position: absolute;
+      top: 15px;
+      right: 70px;
+    }
+  
+    .settings-button {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+    .mute-button-game {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+
+    .mute-button{
+      position:absolute;
+      right: 150px;
+      top: 15px;
+    }
+
+    .home-button-game {
+      position: absolute;
+      top: 15px;
+      right: 95px;
+      font-size: 1.5em;
+    }
+  
+    .settings-button-game {
+      position: absolute;
+      top: 15px;
+      right: 40px;
+      font-size: 1.5em;
+      margin: 0;
+    }
+    .app {
+      height: 80vh;
+    }
+    .setting-menu {
+      padding-top: 0px;
+    }
+  }
